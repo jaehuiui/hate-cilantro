@@ -18,5 +18,3 @@ See the link below for details.
 - [pintos](https://casys-kaist.github.io/pintos-kaist/)
 
 ---
-
-영어가 이상해?
