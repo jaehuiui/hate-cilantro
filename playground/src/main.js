@@ -1,8 +1,26 @@
-import { render } from '@cilantro/core'
+import { render } from '@kongnamul/core'
 
 const schema = {
-  type: 'h1',
-  content: '저는 고수가 싫어요',
+  type: 'div',
+  props: {
+    id: 'container',
+  },
+  children: [
+    {
+      type: 'h1',
+      props: {
+        id: 'title',
+      },
+      children: ['콩나물 좋아하세요?'],
+    },
+    {
+      type: 'p',
+      props: {
+        id: 'description',
+      },
+      children: ['콩나물 국밥은 참 맛있습니다.'],
+    },
+  ],
 }
 
 const container = document.getElementById('app')
