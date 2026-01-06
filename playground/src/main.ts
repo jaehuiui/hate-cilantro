@@ -1,13 +1,18 @@
 import { render, debug } from '@kongnamul/core'
+import type { Schema } from '@kongnamul/core'
 
 debug()
 
-let state = {
+interface State {
+  like: number
+}
+
+let state: State = {
   like: 0,
 }
 
 // state -> schema 생성
-function createSchema(state) {
+function createSchema(state: State): Schema {
   return {
     type: 'div',
     props: {
@@ -36,16 +41,16 @@ function createSchema(state) {
   }
 }
 
-const container = document.getElementById('app')
+const container = document.getElementById('app')!
 
 // state 업데이트 함수
-function updateState(callback) {
+function updateState(callback: (state: State) => void): void {
   callback(state)
   updateDOM()
 }
 
 // DOM 업데이트 동작
-function updateDOM() {
+function updateDOM(): void {
   const nextSchema = createSchema(state)
   render(nextSchema, container)
 }
