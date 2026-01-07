@@ -1,4 +1,4 @@
-export type DiffType = 'replace' | 'text' | 'props' | 'child'
+import type { DiffType } from './types'
 
 let debugMode = false
 const HIGHLIGHT_DURATION = 200
